@@ -26,6 +26,8 @@ namespace CuponeraFront
             tabControlMain.TabPages.Remove(btmAgregarCupon);
             tabControlMain.TabPages.Remove(tabUsuarios);
 
+            CbRegistroAdmin.Visible = false;
+
             this.Load += Form1_Load; 
 
 
@@ -93,6 +95,11 @@ namespace CuponeraFront
                                 tabControlMain.TabPages.Add(btmAgregarCupon);
 
                             tabControlMain.SelectedTab = btmAgregarCupon;
+
+                            CbRegistroAdmin.Visible = true; 
+                            tabControlMain.SelectedTab = tabRegistro;
+
+
                         }
                         else if (Sesion.Rol == "Cliente")
                         {
@@ -126,7 +133,7 @@ namespace CuponeraFront
                 Dni = txtReDni.Text,
                 Email = txtReEmail.Text,
                 Estado = true,
-                Id_Rol = 2 // Cliente por defecto
+                Id_Rol = CbRegistroAdmin.Checked ? 1 : 2
             };
 
             string json = JsonSerializer.Serialize(usuario);

@@ -60,7 +60,7 @@
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.btnMostrarGrid = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabRegistro = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.txtReEmail = new System.Windows.Forms.TextBox();
             this.txtReDni = new System.Windows.Forms.TextBox();
@@ -82,6 +82,7 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.button2 = new System.Windows.Forms.Button();
+            this.CbRegistroAdmin = new System.Windows.Forms.CheckBox();
             this.btmAgregarCupon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCargados)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,7 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudPorcentaje)).BeginInit();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabRegistro.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.SuspendLayout();
@@ -413,28 +414,29 @@
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
-            // tabPage2
+            // tabRegistro
             // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.txtReEmail);
-            this.tabPage2.Controls.Add(this.txtReDni);
-            this.tabPage2.Controls.Add(this.txtReApellido);
-            this.tabPage2.Controls.Add(this.txtReNombre);
-            this.tabPage2.Controls.Add(this.txtRePassword);
-            this.tabPage2.Controls.Add(this.txtReUsuario);
-            this.tabPage2.Controls.Add(this.lblReEmail);
-            this.tabPage2.Controls.Add(this.lblReDni);
-            this.tabPage2.Controls.Add(this.lblReApellido);
-            this.tabPage2.Controls.Add(this.lblReNombre);
-            this.tabPage2.Controls.Add(this.lblRePassword);
-            this.tabPage2.Controls.Add(this.lblReUsuario);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1522, 605);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Registro";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabRegistro.Controls.Add(this.CbRegistroAdmin);
+            this.tabRegistro.Controls.Add(this.button1);
+            this.tabRegistro.Controls.Add(this.txtReEmail);
+            this.tabRegistro.Controls.Add(this.txtReDni);
+            this.tabRegistro.Controls.Add(this.txtReApellido);
+            this.tabRegistro.Controls.Add(this.txtReNombre);
+            this.tabRegistro.Controls.Add(this.txtRePassword);
+            this.tabRegistro.Controls.Add(this.txtReUsuario);
+            this.tabRegistro.Controls.Add(this.lblReEmail);
+            this.tabRegistro.Controls.Add(this.lblReDni);
+            this.tabRegistro.Controls.Add(this.lblReApellido);
+            this.tabRegistro.Controls.Add(this.lblReNombre);
+            this.tabRegistro.Controls.Add(this.lblRePassword);
+            this.tabRegistro.Controls.Add(this.lblReUsuario);
+            this.tabRegistro.Location = new System.Drawing.Point(4, 25);
+            this.tabRegistro.Name = "tabRegistro";
+            this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistro.Size = new System.Drawing.Size(1522, 605);
+            this.tabRegistro.TabIndex = 1;
+            this.tabRegistro.Text = "Registro";
+            this.tabRegistro.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -604,7 +606,7 @@
             // 
             this.tabControlMain.AccessibleName = "";
             this.tabControlMain.Controls.Add(this.tabPage1);
-            this.tabControlMain.Controls.Add(this.tabPage2);
+            this.tabControlMain.Controls.Add(this.tabRegistro);
             this.tabControlMain.Controls.Add(this.tabUsuarios);
             this.tabControlMain.Controls.Add(this.btmAgregarCupon);
             this.tabControlMain.Location = new System.Drawing.Point(-2, -2);
@@ -622,6 +624,16 @@
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // CbRegistroAdmin
+            // 
+            this.CbRegistroAdmin.AutoSize = true;
+            this.CbRegistroAdmin.Location = new System.Drawing.Point(304, 180);
+            this.CbRegistroAdmin.Name = "CbRegistroAdmin";
+            this.CbRegistroAdmin.Size = new System.Drawing.Size(112, 20);
+            this.CbRegistroAdmin.TabIndex = 13;
+            this.CbRegistroAdmin.Text = "Administrador";
+            this.CbRegistroAdmin.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -642,8 +654,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudPorcentaje)).EndInit();
             this.tabUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabRegistro.ResumeLayout(false);
+            this.tabRegistro.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
@@ -685,7 +697,7 @@
         private System.Windows.Forms.TabPage tabUsuarios;
         private System.Windows.Forms.Button btnMostrarGrid;
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabRegistro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtReEmail;
         private System.Windows.Forms.TextBox txtReDni;
@@ -707,6 +719,7 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox CbRegistroAdmin;
     }
 }
 
