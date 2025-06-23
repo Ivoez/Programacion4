@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TrabajoPracticoCuponera.Context;
+using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
+using TrabajoPracticoCuponera.Services;
+using TrabajoPracticoCuponera.Servicies;
+using TrabajoPracticoCuponera.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +46,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+/////////////////////////////////// mis servicios
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<ICuponService, CuponService>();
 
 var app = builder.Build();
 

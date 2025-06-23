@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using TrabajoPracticoCuponera.Context;
 using TrabajoPracticoCuponera.Dtos;
+using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
 
 
@@ -16,122 +17,24 @@ namespace TrabajoPracticoCuponera.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IAuthService _authService;
 
-        private readonly AppDbContext _context;
-        private readonly IConfiguration _config; //
-
-        public AuthController(AppDbContext context, IConfiguration config) //
+        public AuthController(IAuthService authService)
         {
-            _context = context;
-            _config = config;//
+            _authService = authService;
         }
 
-        [HttpPost("login")] // LOGIN 
-
-        public async Task<IActionResult> Login(LoginModel loginModel)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            try
-            {
-                var usuarioEntity = await _context.Usuarios
-                    .Include(rol => rol.Rol)
-                    .FirstOrDefaultAsync(usuario => usuario.User_Name == loginModel.User_Name);
-
-
-                if (usuarioEntity is null)
-                    return NotFound("Credenciales Invalidas");
-
-
-
-                bool passwordOk = BCrypt.Net.BCrypt.Verify(loginModel.Password, usuarioEntity.Password);
-                if (!passwordOk)
-                    return Unauthorized("Credenciales inválidas");
-
-
-
-                var claims = new[]
-                {
-                    new Claim(ClaimTypes.Name, usuarioEntity.User_Name),
-                     new Claim(ClaimTypes.Role, usuarioEntity.Rol.Nombre)
-                };
-
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-                var token = new JwtSecurityToken(
-                    claims: claims,
-                    expires: DateTime.Now.AddHours(1),
-                    signingCredentials: creds
-                    );
-
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-
-                return Ok(new
-                {
-                    Mensaje = "Login Correcto",
-                    Token = tokenString,
-                    Vencimiento = DateTime.Now.AddHours(1),
-                    Rol = usuarioEntity.Rol.Nombre,
-                    User = usuarioEntity.User_Name
-                });
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new
-                {
-                    Mensaje = "Error al loguearse",
-                    Error = ex.Message
-                });
-            }
-
-
+            return await _authService.LoginAsync(model);
         }
 
-
-
-        [HttpPost("register")] // REGISTRO DE USUARIO
-        public async Task<IActionResult> Register(RegistroUsuarioDTO userDTO)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegistroUsuarioDTO dto)
         {
-            try
-            {
-                var usuarioExistente = await _context.Usuarios
-                    .FirstOrDefaultAsync(u => u.User_Name == userDTO.User_Name);
-
-                if (usuarioExistente != null)
-                {
-                    return BadRequest("El nombre de usuario ya está en uso.");
-                }
-
-                var nuevoUsuario = new UserModel
-                {
-                    User_Name = userDTO.User_Name,
-                    Password = BCrypt.Net.BCrypt.HashPassword(userDTO.Password), // Encriptar la contraseña
-                    Nombre = userDTO.Nombre,
-                    Apellido = userDTO.Apellido,
-                    Dni = userDTO.Dni,  // corregido aquí
-                    Email = userDTO.Email,
-                    Estado = true,
-                    Id_Rol = 2 // 2 por defecto - Rol de Cliente
-                };
-
-                _context.Usuarios.Add(nuevoUsuario);
-                await _context.SaveChangesAsync();
-
-                return Ok("Usuario registrado correctamente.");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new
-                {
-                    Mensaje = "Error al registrar el usuario",
-                    Error = ex.Message,
-                    InnerError = ex.InnerException?.Message
-                });
-            }
+            return await _authService.RegisterAsync(dto);
         }
-
-
     }
 }
 

@@ -175,3 +175,4 @@ C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\TrabajoPracti
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\TrabajoPracticoCuponera\bin\Debug\net8.0\JWT.dll
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\TrabajoPracticoCuponera\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\TrabajoPracticoCuponera\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\TrabajoPracticoCuponera\bin\Debug\net8.0\libman.json

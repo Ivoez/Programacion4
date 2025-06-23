@@ -12,6 +12,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using CuponeraFront.Utils;
+using TrabajoPracticoCuponera.DTOs;
 
 namespace CuponeraFront
 {
@@ -20,6 +21,8 @@ namespace CuponeraFront
         public Form1()
         {
             InitializeComponent();
+            tabUsuarios.Parent = null;
+            dgvUsuarios.RowValidated += dgvUsuarios_RowValidated; // nos permite que al editar una columna y salir de esta valida los datos ingresados
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,6 +74,25 @@ namespace CuponeraFront
 
 
                         MessageBox.Show($"Login exitoso como {Sesion.Rol}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (Sesion.Rol == "Admin")
+                        {
+                            tabUsuarios.Parent = tabControlMain; 
+                        }
+                        else
+                        {
+                            tabUsuarios.Parent = null; 
+                        }
+
+                        if (Sesion.Rol == "Admin")
+                        {
+                            tabUsuarios.Parent = tabControlMain; 
+                            
+                        }
+                        else
+                        {
+                            tabUsuarios.Parent = null; 
+                        }
+
 
 
                     }
@@ -126,6 +148,103 @@ namespace CuponeraFront
                 MessageBox.Show("Error de conexión:\n" + ex.Message);
             }
         }
+
+
+
+
+
+        ///DATAGRID INFO
+
+        private async Task CargarUsuariosAsync()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+            var response = await httpClient.GetAsync("https://localhost:44329/api/Usuario");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var usuarios = JsonSerializer.Deserialize<List<UsuarioDTO>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                dgvUsuarios.DataSource = new BindingList<UsuarioDTO>(usuarios);
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron cargar los usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void dgvUsuarios_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; 
+
+            var row = dgvUsuarios.Rows[e.RowIndex];
+            if (row.DataBoundItem is UsuarioDTO usuarioModificado)
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                string url = $"https://localhost:44329/api/Usuario/{usuarioModificado.Id_Usuario}";
+
+                string json = JsonSerializer.Serialize(usuarioModificado);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                try
+                {
+                    var response = await httpClient.PutAsync(url, content);
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        string error = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"Error al actualizar usuario:\n{error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        
+                        await CargarUsuariosAsync();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error de conexión al actualizar usuario:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async void btnMostrarGrid_Click(object sender, EventArgs e)
+        {
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+            var response = await httpClient.GetAsync("https://localhost:44329/api/Usuario");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var usuarios = JsonSerializer.Deserialize<List<UsuarioDTO>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                dgvUsuarios.DataSource = new BindingList<UsuarioDTO>(usuarios); 
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron cargar los usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } //mostrar usuarios 
+
+
+      private void dgvUsuarios_CellContentClick(object sender, EventArgs eventArgs)
+        {
+            //deshabilitado xd
+        }
+
+
+
+
+
+
 
     }
 

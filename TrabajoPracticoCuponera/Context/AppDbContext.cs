@@ -13,9 +13,19 @@ namespace TrabajoPracticoCuponera.Context
         public DbSet<UserModel> Usuarios { get; set; }
         public DbSet<RolModel> Roles { get; set; }
    
+        public DbSet<CuponModel> Cupones { get; set; }
+
+        public DbSet<CuponDetalleModel> CuponesDetalle { get; set; }
+
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-         
+
+            modelBuilder.Entity<CuponDetalleModel>()
+        .HasKey(cd => new { cd.NroCupon, cd.id_Articulo });
+
 
             base.OnModelCreating(modelBuilder);
         }
