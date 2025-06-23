@@ -13,6 +13,8 @@ using System.Text;
 using System.Text.Json;
 using CuponeraFront.Utils;
 using TrabajoPracticoCuponera.DTOs;
+using System.Text.Json.Serialization;
+using TrabajoPracticoCuponera.Dtos;
 
 namespace CuponeraFront
 {
@@ -21,8 +23,9 @@ namespace CuponeraFront
         public Form1()
         {
             InitializeComponent();
-            tabUsuarios.Parent = null;
-            tabCupones.Parent = null;
+            tabControlMain.TabPages.Remove(tabCupones);
+            tabControlMain.TabPages.Remove(tabUsuarios);
+
 
 
 
@@ -34,12 +37,12 @@ namespace CuponeraFront
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             //deshabilitado xd
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         { 
         //desabilitado xd
         }
@@ -80,29 +83,18 @@ namespace CuponeraFront
                         MessageBox.Show($"Login exitoso como {Sesion.Rol}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (Sesion.Rol == "Admin")
                         {
-                            tabUsuarios.Parent = tabControlMain; 
+                            if (!tabControlMain.TabPages.Contains(tabUsuarios))
+                                tabControlMain.TabPages.Add(tabUsuarios);
+
+                            if (!tabControlMain.TabPages.Contains(tabCupones))
+                                tabControlMain.TabPages.Add(tabCupones);
+
+                            tabControlMain.SelectedTab = tabCupones;
                         }
                         else
                         {
-                            tabUsuarios.Parent = null; 
+                            MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-                        if (Sesion.Rol == "Admin")
-                        {
-                            tabUsuarios.Parent = tabControlMain; 
-                            
-                        }
-                        else
-                        {
-                            tabUsuarios.Parent = null; 
-                        }
-
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -157,7 +149,7 @@ namespace CuponeraFront
 
 
 
-        ///DATAGRID INFO
+        ///DATAGRID INFO Usuarios 
 
         private async Task CargarUsuariosAsync()
         {
@@ -216,7 +208,7 @@ namespace CuponeraFront
             }
         }
 
-        private async void btnMostrarGrid_Click(object sender, EventArgs e)
+        private async void btnMostrarGrid_Click(object sender, EventArgs e) //mostrar usuarios 
         {
 
             var httpClient = new HttpClient();
@@ -236,12 +228,44 @@ namespace CuponeraFront
             {
                 MessageBox.Show("No se pudieron cargar los usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } //mostrar usuarios 
+        
+            }
 
 
-      private void dgvUsuarios_CellContentClick(object sender, EventArgs eventArgs)
+
+
+
+        //DATAGRID Cupones cargados
+        private async void button2_Click(object sender, EventArgs e) //ver cupones cargados
         {
-            //deshabilitado xd
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/Cupon");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var cupones = JsonSerializer.Deserialize<List<CuponDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    dgvCuponesCargados.AutoGenerateColumns = true; 
+                    dgvCuponesCargados.DataSource = new BindingList<CuponDTO>(cupones);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron cargar los cupones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
         }
 
 
@@ -250,6 +274,75 @@ namespace CuponeraFront
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, EventArgs eventArgs)
+        {
+            //deshabilitado xd
+        }
+
+        private void tabCupones_Click(object sender, EventArgs e)
+        {
+            //deshabilitado xd
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            //deshabilitado xd
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            //deshabilitado xd
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmbTipoCupon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbTipoCupon.DataSource = new List<object>
+    {
+        new { Id = 1, Nombre = "Porcentaje" },
+        new { Id = 2, Nombre = "Importe fijo" }
+    };
+            cmbTipoCupon.DisplayMember = "Nombre";
+            cmbTipoCupon.ValueMember = "Id";
+
+            cmbTipoCupon.SelectedIndex = 0; 
+        }
     }
 
 }
