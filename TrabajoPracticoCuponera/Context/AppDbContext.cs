@@ -17,7 +17,7 @@ namespace TrabajoPracticoCuponera.Context
 
         public DbSet<CuponDetalleModel> CuponesDetalle { get; set; }
 
-
+        public DbSet<TipoCuponModel> TipoCupones { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

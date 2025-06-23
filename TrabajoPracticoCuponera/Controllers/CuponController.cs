@@ -24,6 +24,16 @@ namespace TrabajoPracticoCuponera.Controllers
             return Ok(cupones);
         }
 
+        // GET: api/Cupon/tipoC
+        [HttpGet("tipos")]
+        public async Task<IActionResult> GetTipos()
+        {
+            var tipos = await _cuponService.ObtenerTiposAsync();
+            return Ok(tipos);
+        }
+
+
+
         // GET: api/Cupon/activos
         [HttpGet("activos")]
         public async Task<IActionResult> ObtenerActivos()

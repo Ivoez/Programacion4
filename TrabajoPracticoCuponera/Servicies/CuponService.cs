@@ -80,6 +80,21 @@ namespace TrabajoPracticoCuponera.Servicies
             };
         }
 
+        //obtener el tipo de cupon 
+        public async Task<List<TipoCuponDTO>> ObtenerTiposAsync()
+        {
+            return await _context.TipoCupones
+                .Select(t => new TipoCuponDTO
+                {
+                    Id_Tipo_Cupon = t.Id_Tipo_Cupon,
+                    Nombre = t.Nombre
+                }).ToListAsync();
+        }
+
+
+
+
+
         // Crear cupón
         public async Task<bool> CrearAsync(CuponDTO dto)
         {
@@ -180,5 +195,7 @@ namespace TrabajoPracticoCuponera.Servicies
         }
 
         private string Segmento() => new Random().Next(100, 999).ToString();
+
+      
     }
 }

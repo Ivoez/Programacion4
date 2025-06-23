@@ -10,5 +10,7 @@ namespace TrabajoPracticoCuponera.Interfaces
         Task<bool> CrearAsync(CuponDTO dto);
         Task<bool> ActualizarAsync(string nroCupon, CuponDTO dto);
         Task<bool> EliminarAsync(string nroCupon);
+        Task<List<TipoCuponDTO>> ObtenerTiposAsync();
+
     }
 }

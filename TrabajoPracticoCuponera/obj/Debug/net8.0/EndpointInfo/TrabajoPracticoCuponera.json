@@ -108,6 +108,18 @@
         }
       }
     },
+    "/api/Cupon/tipos": {
+      "get": {
+        "tags": [
+          "Cupon"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cupon/activos": {
       "get": {
         "tags": [

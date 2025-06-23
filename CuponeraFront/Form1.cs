@@ -23,8 +23,10 @@ namespace CuponeraFront
         public Form1()
         {
             InitializeComponent();
-            tabControlMain.TabPages.Remove(tabCupones);
+            tabControlMain.TabPages.Remove(btmAgregarCupon);
             tabControlMain.TabPages.Remove(tabUsuarios);
+
+            this.Load += Form1_Load; 
 
 
 
@@ -81,20 +83,25 @@ namespace CuponeraFront
 
 
                         MessageBox.Show($"Login exitoso como {Sesion.Rol}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                         if (Sesion.Rol == "Admin")
                         {
                             if (!tabControlMain.TabPages.Contains(tabUsuarios))
                                 tabControlMain.TabPages.Add(tabUsuarios);
 
-                            if (!tabControlMain.TabPages.Contains(tabCupones))
-                                tabControlMain.TabPages.Add(tabCupones);
+                            if (!tabControlMain.TabPages.Contains(btmAgregarCupon))
+                                tabControlMain.TabPages.Add(btmAgregarCupon);
 
-                            tabControlMain.SelectedTab = tabCupones;
+                            tabControlMain.SelectedTab = btmAgregarCupon;
                         }
-                        else
+                        else if (Sesion.Rol == "Cliente")
                         {
-                            MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            ////////////////
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -269,11 +276,111 @@ namespace CuponeraFront
         }
 
 
+        /////// carga del combox del tipo de cupon 
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            await CargarTiposCuponAsync();
+        }
+
+        private async Task CargarTiposCuponAsync()
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/Cupon/tipos");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var tipos = JsonSerializer.Deserialize<List<TipoCuponDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    cmbTipoCupon.DataSource = tipos;
+                    cmbTipoCupon.DisplayMember = "Nombre";
+                    cmbTipoCupon.ValueMember = "Id_Tipo_Cupon";
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron cargar los tipos de cupón.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar tipos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 
+        //boton agregar cupon
+        private async void button2_Click_1(object sender, EventArgs e)
+        {
+            {
+                if (string.IsNullOrWhiteSpace(txtNombreCupon.Text))
+                {
+                    MessageBox.Show("Ingrese un nombre para el cupón.");
+                    return;
+                }
+
+                var dto = new CuponDTO
+                {
+                    Nombre = txtNombreCupon.Text,
+                    Descripcion = txtDescrip.Text,
+                    FechaInicio = DtpInicio.Value,
+                    FechaFin = DtpFin.Value,
+                    Id_Tipo_Cupon = (int)cmbTipoCupon.SelectedValue,
+                    Activo = CbActivo.Checked,
+                    PorcentajeDto = null,
+                    ImportePromo = null,
+                    Detalles = new List<CuponDetalleDTO>() 
+                };
+
+                
+                if (dto.Id_Tipo_Cupon == 1 && decimal.TryParse(NudPorcentaje.Text, out decimal porc))
+                    dto.PorcentajeDto = porc;
+                else if (dto.Id_Tipo_Cupon == 2 && decimal.TryParse(NudImporte.Text, out decimal imp))
+                    dto.ImportePromo = imp;
+                
+                
+
+                // Llamada a la API
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var json = JsonSerializer.Serialize(dto);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await httpClient.PostAsync("https://localhost:44329/api/Cupon", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Cupón creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                  
+                    txtNombreCupon.Text = "";
+                    txtDescrip.Text = "";
+                    NudPorcentaje.Text = "";
+                    NudImporte.Text = "";
+                    DtpInicio.Value = DateTime.Today;
+                    DtpFin.Value = DateTime.Today;
+                    cmbTipoCupon.SelectedIndex = -1;
+                    CbActivo.Checked = false;
 
 
+
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show("Error al crear cupón: " + error);
+                }
+            }
+        }
 
 
 
@@ -331,18 +438,7 @@ namespace CuponeraFront
 
         }
 
-        private void cmbTipoCupon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbTipoCupon.DataSource = new List<object>
-    {
-        new { Id = 1, Nombre = "Porcentaje" },
-        new { Id = 2, Nombre = "Importe fijo" }
-    };
-            cmbTipoCupon.DisplayMember = "Nombre";
-            cmbTipoCupon.ValueMember = "Id";
-
-            cmbTipoCupon.SelectedIndex = 0; 
-        }
+       
     }
 
 }

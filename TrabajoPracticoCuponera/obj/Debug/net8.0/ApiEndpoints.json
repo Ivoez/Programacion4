@@ -121,6 +121,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
+    "Method": "GetTipos",
+    "RelativePath": "api/Cupon/tipos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.UsuarioController",
     "Method": "GetUsuarios",
     "RelativePath": "api/Usuario",
