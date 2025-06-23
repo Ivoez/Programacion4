@@ -9876,11 +9876,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivan_\\Desktop\\base proyecto nuevo\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
       "projectName": "TrabajoPracticoCuponera",
-      "projectPath": "C:\\Users\\ivan_\\Desktop\\base proyecto nuevo\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
+      "projectPath": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
       "packagesPath": "C:\\Users\\ivan_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivan_\\Desktop\\base proyecto nuevo\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera\\obj\\",
+      "outputPath": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

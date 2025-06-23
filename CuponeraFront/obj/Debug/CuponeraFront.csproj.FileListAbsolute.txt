@@ -29,3 +29,34 @@ C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\CuponeraFront
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\CuponeraFront\obj\Debug\Cuponera.33E05E7B.Up2Date
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\CuponeraFront\obj\Debug\CuponeraFront.exe
 C:\Users\ivan_\Desktop\base proyecto nuevo\TrabajoPracticoCuponera\CuponeraFront\obj\Debug\CuponeraFront.pdb
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\CuponeraFront.exe.config
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\CuponeraFront.exe
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\CuponeraFront.pdb
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Buffers.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.IO.Pipelines.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Memory.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Numerics.Vectors.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Text.Encodings.Web.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Text.Json.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.ValueTuple.dll
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Buffers.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.IO.Pipelines.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Memory.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Numerics.Vectors.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Text.Encodings.Web.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Text.Json.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\bin\Debug\System.ValueTuple.xml
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.csproj.AssemblyReference.cache
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.Form1.resources
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.Properties.Resources.resources
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.csproj.GenerateResource.cache
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\Cuponera.33E05E7B.Up2Date
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.exe
+C:\xampp\htdocs\Programacion4\CuponeraFront\obj\Debug\CuponeraFront.pdb

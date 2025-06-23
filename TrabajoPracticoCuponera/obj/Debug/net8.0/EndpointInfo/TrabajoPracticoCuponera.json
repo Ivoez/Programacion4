@@ -108,6 +108,18 @@
         }
       }
     },
+    "/api/Cupon/activos": {
+      "get": {
+        "tags": [
+          "Cupon"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cupon/{nroCupon}": {
       "get": {
         "tags": [
@@ -352,6 +364,27 @@
           },
           "activo": {
             "type": "boolean"
+          },
+          "detalles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuponDetalleDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CuponDetalleDTO": {
+        "type": "object",
+        "properties": {
+          "id_Articulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

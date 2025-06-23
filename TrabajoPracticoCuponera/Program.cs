@@ -5,9 +5,7 @@ using System.Text;
 using TrabajoPracticoCuponera.Context;
 using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
-using TrabajoPracticoCuponera.Services;
 using TrabajoPracticoCuponera.Servicies;
-using TrabajoPracticoCuponera.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -10,5 +10,9 @@
         public DateTime FechaFin { get; set; }
         public int Id_Tipo_Cupon { get; set; }
         public bool Activo { get; set; }
+
+
+        public List<CuponDetalleDTO> Detalles { get; set; } = new List<CuponDetalleDTO>();
+
     }
 }

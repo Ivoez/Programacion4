@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrabajoPracticoCuponera")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af2a1dff8d78ed9ffe04c9fe4224f1b3246490e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrabajoPracticoCuponera")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrabajoPracticoCuponera")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

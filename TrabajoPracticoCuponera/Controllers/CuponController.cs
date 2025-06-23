@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TrabajoPracticoCuponera.Dtos;
 using TrabajoPracticoCuponera.Interfaces;
 
 namespace TrabajoPracticoCuponera.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class CuponController : ControllerBase
     {
         private readonly ICuponService _cuponService;
@@ -18,47 +18,65 @@ namespace TrabajoPracticoCuponera.Controllers
 
         // GET: api/Cupon
         [HttpGet]
-        public async Task<IActionResult> ObtenerCupones()
+        public async Task<IActionResult> ObtenerTodos()
         {
-            var cupones = await _cuponService.ObtenerCuponesAsync();
+            var cupones = await _cuponService.ObtenerTodosAsync();
             return Ok(cupones);
         }
 
-        // GET: api/Cupon/NRO123
-        [HttpGet("{nroCupon}")]
-        public async Task<IActionResult> ObtenerCupon(string nroCupon)
+        // GET: api/Cupon/activos
+        [HttpGet("activos")]
+        public async Task<IActionResult> ObtenerActivos()
         {
-            var cupon = await _cuponService.ObtenerCuponPorNroAsync(nroCupon);
-            if (cupon == null) return NotFound();
+            var cupones = await _cuponService.ObtenerActivosAsync();
+            return Ok(cupones);
+        }
+
+        // GET: api/Cupon/{nroCupon}
+        [HttpGet("{nroCupon}")]
+        public async Task<IActionResult> ObtenerPorNro(string nroCupon)
+        {
+            var cupon = await _cuponService.ObtenerPorNroAsync(nroCupon);
+            if (cupon == null)
+                return NotFound(new { mensaje = "Cupón no encontrado." });
+
             return Ok(cupon);
         }
 
         // POST: api/Cupon
         [HttpPost]
-        public async Task<IActionResult> CrearCupon([FromBody] CuponDTO cuponDto)
+        [Authorize(Roles = "Admin")] 
+        public async Task<IActionResult> Crear([FromBody] CuponDTO dto)
         {
-            var creado = await _cuponService.CrearCuponAsync(cuponDto);
-            if (!creado) return BadRequest("Ya existe un cupón con ese número.");
-            return Ok("Cupón creado correctamente.");
+            var creado = await _cuponService.CrearAsync(dto);
+            if (!creado)
+                return BadRequest(new { mensaje = "No se pudo crear el cupón. Verifique los datos." });
+
+            return Ok(new { mensaje = "Cupón creado correctamente." });
         }
 
-        // PUT: api/Cupon/NRO123
+        // PUT: api/Cupon/{nroCupon}
         [HttpPut("{nroCupon}")]
-        public async Task<IActionResult> ActualizarCupon(string nroCupon, [FromBody] CuponDTO cuponDto)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Actualizar(string nroCupon, [FromBody] CuponDTO dto)
         {
-            var actualizado = await _cuponService.ActualizarCuponAsync(nroCupon, cuponDto);
-            if (!actualizado) return NotFound("Cupón no encontrado.");
-            return Ok("Cupón actualizado correctamente.");
+            var actualizado = await _cuponService.ActualizarAsync(nroCupon, dto);
+            if (!actualizado)
+                return NotFound(new { mensaje = "No se encontró el cupón a actualizar." });
+
+            return Ok(new { mensaje = "Cupón actualizado correctamente." });
         }
 
-        // DELETE: api/Cupon/NRO123
+        // DELETE: api/Cupon/{nroCupon}
         [HttpDelete("{nroCupon}")]
-        public async Task<IActionResult> EliminarCupon(string nroCupon)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Eliminar(string nroCupon)
         {
-            var eliminado = await _cuponService.EliminarCuponAsync(nroCupon);
-            if (!eliminado) return NotFound("Cupón no encontrado.");
-            return Ok("Cupón eliminado correctamente.");
+            var eliminado = await _cuponService.EliminarAsync(nroCupon);
+            if (!eliminado)
+                return NotFound(new { mensaje = "No se encontró el cupón a eliminar." });
+
+            return Ok(new { mensaje = "Cupón eliminado correctamente." });
         }
     }
 }
-

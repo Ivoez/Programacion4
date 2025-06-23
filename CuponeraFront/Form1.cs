@@ -22,6 +22,10 @@ namespace CuponeraFront
         {
             InitializeComponent();
             tabUsuarios.Parent = null;
+            tabCupones.Parent = null;
+
+
+
             dgvUsuarios.RowValidated += dgvUsuarios_RowValidated; // nos permite que al editar una columna y salir de esta valida los datos ingresados
         }
 

@@ -4,7 +4,7 @@ using TrabajoPracticoCuponera.DTOs;
 using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
 
-namespace TrabajoPracticoCuponera.Servicios
+namespace TrabajoPracticoCuponera.Servicies
 {
     public class UsuarioService : IUsuarioService
     {

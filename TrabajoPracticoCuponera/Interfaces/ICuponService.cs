@@ -4,10 +4,11 @@ namespace TrabajoPracticoCuponera.Interfaces
 {
     public interface ICuponService
     {
-        Task<IEnumerable<CuponDTO>> ObtenerCuponesAsync();
-        Task<CuponDTO> ObtenerCuponPorNroAsync(string nroCupon);
-        Task<bool> CrearCuponAsync(CuponDTO dto);
-        Task<bool> ActualizarCuponAsync(string nroCupon, CuponDTO dto);
-        Task<bool> EliminarCuponAsync(string nroCupon);
+        Task<List<CuponDTO>> ObtenerTodosAsync();
+        Task<List<CuponDTO>> ObtenerActivosAsync();
+        Task<CuponDTO?> ObtenerPorNroAsync(string nroCupon);
+        Task<bool> CrearAsync(CuponDTO dto);
+        Task<bool> ActualizarAsync(string nroCupon, CuponDTO dto);
+        Task<bool> EliminarAsync(string nroCupon);
     }
 }

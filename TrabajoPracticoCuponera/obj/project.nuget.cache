@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "engmtUYzxow=",
+  "dgSpecHash": "4HridiPu0mg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ivan_\\Desktop\\base proyecto nuevo\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivan_\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ivan_\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

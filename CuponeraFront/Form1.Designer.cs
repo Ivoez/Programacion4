@@ -52,6 +52,7 @@
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.btnMostrarGrid = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.tabCupones = new System.Windows.Forms.TabPage();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -252,6 +253,7 @@
             this.tabControlMain.Controls.Add(this.tabPage1);
             this.tabControlMain.Controls.Add(this.tabPage2);
             this.tabControlMain.Controls.Add(this.tabUsuarios);
+            this.tabControlMain.Controls.Add(this.tabCupones);
             this.tabControlMain.Location = new System.Drawing.Point(-2, 2);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -291,6 +293,16 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(749, 242);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
+            // 
+            // tabCupones
+            // 
+            this.tabCupones.Location = new System.Drawing.Point(4, 25);
+            this.tabCupones.Name = "tabCupones";
+            this.tabCupones.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCupones.Size = new System.Drawing.Size(788, 298);
+            this.tabCupones.TabIndex = 3;
+            this.tabCupones.Text = "Cupones";
+            this.tabCupones.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -336,6 +348,7 @@
         private System.Windows.Forms.TabPage tabUsuarios;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnMostrarGrid;
+        private System.Windows.Forms.TabPage tabCupones;
     }
 }
 

@@ -9,7 +9,7 @@ using TrabajoPracticoCuponera.Dtos;
 using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
 
-namespace TrabajoPracticoCuponera.Services
+namespace TrabajoPracticoCuponera.Servicies
 {
     public class AuthService : IAuthService
     {

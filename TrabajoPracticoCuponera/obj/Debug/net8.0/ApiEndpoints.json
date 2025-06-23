@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
-    "Method": "ObtenerCupones",
+    "Method": "ObtenerTodos",
     "RelativePath": "api/Cupon",
     "HttpMethod": "GET",
     "IsController": true,
@@ -43,14 +43,14 @@
   },
   {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
-    "Method": "CrearCupon",
+    "Method": "Crear",
     "RelativePath": "api/Cupon",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cuponDto",
+        "Name": "dto",
         "Type": "TrabajoPracticoCuponera.Dtos.CuponDTO",
         "IsRequired": true
       }
@@ -59,7 +59,7 @@
   },
   {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
-    "Method": "ObtenerCupon",
+    "Method": "ObtenerPorNro",
     "RelativePath": "api/Cupon/{nroCupon}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -75,7 +75,7 @@
   },
   {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
-    "Method": "ActualizarCupon",
+    "Method": "Actualizar",
     "RelativePath": "api/Cupon/{nroCupon}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -87,7 +87,7 @@
         "IsRequired": true
       },
       {
-        "Name": "cuponDto",
+        "Name": "dto",
         "Type": "TrabajoPracticoCuponera.Dtos.CuponDTO",
         "IsRequired": true
       }
@@ -96,7 +96,7 @@
   },
   {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
-    "Method": "EliminarCupon",
+    "Method": "Eliminar",
     "RelativePath": "api/Cupon/{nroCupon}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -108,6 +108,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponController",
+    "Method": "ObtenerActivos",
+    "RelativePath": "api/Cupon/activos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

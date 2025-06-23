@@ -15,24 +15,27 @@ namespace TrabajoPracticoCuponera.Servicies
             _context = context;
         }
 
-        public async Task<List<CuponDTO>> ObtenerTodos()
+        // Obtener todos los cupones
+        public async Task<List<CuponDTO>> ObtenerTodosAsync()
         {
-            return await _context.Cupones.Select(c => new CuponDTO
-            {
-                Nombre = c.Nombre,
-                Descripcion = c.Descripcion,
-                PorcentajeDto = c.PorcentajeDto,
-                ImportePromo = c.ImportePromo,
-                FechaInicio = c.FechaInicio,
-                FechaFin = c.FechaFin,
-                Id_Tipo_Cupon = c.Id_Tipo_Cupon,
-                Activo = c.Activo
-            }).ToListAsync();
+            return await _context.Cupones
+                .Select(c => new CuponDTO
+                {
+                    Nombre = c.Nombre,
+                    Descripcion = c.Descripcion,
+                    PorcentajeDto = c.PorcentajeDto,
+                    ImportePromo = c.ImportePromo,
+                    FechaInicio = c.FechaInicio,
+                    FechaFin = c.FechaFin,
+                    Id_Tipo_Cupon = c.Id_Tipo_Cupon,
+                    Activo = c.Activo
+                }).ToListAsync();
         }
 
-        public async Task<List<CuponDTO>> ObtenerActivos()
+        // Obtener solo los activos y vigentes
+        public async Task<List<CuponDTO>> ObtenerActivosAsync()
         {
-            var hoy = DateTime.Now.Date;
+            var hoy = DateTime.Today;
             return await _context.Cupones
                 .Where(c => c.Activo && c.FechaInicio <= hoy && c.FechaFin >= hoy)
                 .Select(c => new CuponDTO
@@ -48,90 +51,134 @@ namespace TrabajoPracticoCuponera.Servicies
                 }).ToListAsync();
         }
 
-        public async Task<bool> CrearCuponConDetalleAsync(CuponDetalleDTO dto)
+        // Obtener uno por su número
+        public async Task<CuponDTO?> ObtenerPorNroAsync(string nroCupon)
         {
-            // Validación según tipo
-            if (dto.Cupon.Id_Tipo_Cupon == 1 && !dto.Cupon.PorcentajeDto.HasValue)
-                return false;
+            var cupon = await _context.Cupones
+                .Include(c => c.Detalles)
+                    .ThenInclude(d => d.Articulo)
+                .FirstOrDefaultAsync(c => c.NroCupon == nroCupon);
 
-            if (dto.Cupon.Id_Tipo_Cupon == 2 && !dto.Cupon.ImportePromo.HasValue)
-                return false;
+            if (cupon == null) return null;
 
-            // Generar NroCupon aleatorio con formato 123-456-789
+            return new CuponDTO
+            {
+                Nombre = cupon.Nombre,
+                Descripcion = cupon.Descripcion,
+                PorcentajeDto = cupon.PorcentajeDto,
+                ImportePromo = cupon.ImportePromo,
+                FechaInicio = cupon.FechaInicio,
+                FechaFin = cupon.FechaFin,
+                Id_Tipo_Cupon = cupon.Id_Tipo_Cupon,
+                Activo = cupon.Activo,
+                Detalles = cupon.Detalles.Select(d => new CuponDetalleDTO
+                {
+                    Id_Articulo = d.id_Articulo,
+                    Cantidad = d.Cantidad,
+                    
+                }).ToList()
+            };
+        }
+
+        // Crear cupón
+        public async Task<bool> CrearAsync(CuponDTO dto)
+        {
+            // Validar tipo de cupón
+            if (dto.Id_Tipo_Cupon == 1 && !dto.PorcentajeDto.HasValue) return false;
+            if (dto.Id_Tipo_Cupon == 2 && !dto.ImportePromo.HasValue) return false;
+
             string nroCupon;
             do
             {
-                nroCupon = $"{GenerarSegmento()}-{GenerarSegmento()}-{GenerarSegmento()}";
+                nroCupon = $"{Segmento()}-{Segmento()}-{Segmento()}";
             } while (await _context.Cupones.AnyAsync(c => c.NroCupon == nroCupon));
 
             var cupon = new CuponModel
             {
                 NroCupon = nroCupon,
-                Nombre = dto.Cupon.Nombre,
-                Descripcion = dto.Cupon.Descripcion,
-                PorcentajeDto = dto.Cupon.PorcentajeDto,
-                ImportePromo = dto.Cupon.ImportePromo,
-                FechaInicio = dto.Cupon.FechaInicio,
-                FechaFin = dto.Cupon.FechaFin,
-                Id_Tipo_Cupon = dto.Cupon.Id_Tipo_Cupon,
-                Activo = dto.Cupon.Activo
+                Nombre = dto.Nombre,
+                Descripcion = dto.Descripcion,
+                PorcentajeDto = dto.PorcentajeDto,
+                ImportePromo = dto.ImportePromo,
+                FechaInicio = dto.FechaInicio,
+                FechaFin = dto.FechaFin,
+                Id_Tipo_Cupon = dto.Id_Tipo_Cupon,
+                Activo = dto.Activo
             };
 
             _context.Cupones.Add(cupon);
 
-            foreach (var item in dto.Detalles)
+            if (dto.Detalles?.Any() == true)
             {
-                _context.CuponesDetalle.Add(new CuponDetalleModel
+                foreach (var item in dto.Detalles)
                 {
-                    NroCupon = cupon.NroCupon,
-                    id_Articulo = item.Id_Articulo,
-                    Cantidad = item.Cantidad
-                });
+                    _context.CuponesDetalle.Add(new CuponDetalleModel
+                    {
+                        NroCupon = nroCupon,
+                        id_Articulo = item.Id_Articulo,
+                        Cantidad = item.Cantidad
+                    });
+                }
             }
 
             await _context.SaveChangesAsync();
             return true;
         }
 
-        private string GenerarSegmento()
+        // Actualizar cupón
+        public async Task<bool> ActualizarAsync(string nroCupon, CuponDTO dto)
         {
-            var random = new Random();
-            return random.Next(100, 999).ToString();
-        }
+            var cupon = await _context.Cupones
+                .Include(c => c.Detalles)
+                .FirstOrDefaultAsync(c => c.NroCupon == nroCupon);
 
-        public async Task<bool> EliminarCuponAsync(string nroCupon)
-        {
-            var cupon = await _context.Cupones.FindAsync(nroCupon);
             if (cupon == null) return false;
 
-            _context.Cupones.Remove(cupon);
+            cupon.Nombre = dto.Nombre;
+            cupon.Descripcion = dto.Descripcion;
+            cupon.PorcentajeDto = dto.PorcentajeDto;
+            cupon.ImportePromo = dto.ImportePromo;
+            cupon.FechaInicio = dto.FechaInicio;
+            cupon.FechaFin = dto.FechaFin;
+            cupon.Id_Tipo_Cupon = dto.Id_Tipo_Cupon;
+            cupon.Activo = dto.Activo;
+
+            // Borrar detalle anterior y agregar nuevo
+            _context.CuponesDetalle.RemoveRange(cupon.Detalles);
+
+            if (dto.Detalles?.Any() == true)
+            {
+                foreach (var item in dto.Detalles)
+                {
+                    _context.CuponesDetalle.Add(new CuponDetalleModel
+                    {
+                        NroCupon = nroCupon,
+                        id_Articulo = item.Id_Articulo,
+                        Cantidad = item.Cantidad
+                    });
+                }
+            }
+
             await _context.SaveChangesAsync();
             return true;
         }
 
-        public Task<IEnumerable<CuponDTO>> ObtenerCuponesAsync()
+        // Eliminar cupón
+        public async Task<bool> EliminarAsync(string nroCupon)
         {
-            throw new NotImplementedException();
+            var cupon = await _context.Cupones
+                .Include(c => c.Detalles)
+                .FirstOrDefaultAsync(c => c.NroCupon == nroCupon);
+
+            if (cupon == null) return false;
+
+            _context.CuponesDetalle.RemoveRange(cupon.Detalles);
+            _context.Cupones.Remove(cupon);
+
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public Task<CuponDTO> ObtenerCuponPorIdAsync(string nroCupon)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> CrearCuponAsync(CuponDTO dto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> ActualizarCuponAsync(string nroCupon, CuponDTO dto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CuponDTO> ObtenerCuponPorNroAsync(string nroCupon)
-        {
-            throw new NotImplementedException();
-        }
+        private string Segmento() => new Random().Next(100, 999).ToString();
     }
 }
