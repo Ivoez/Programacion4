@@ -27,7 +27,7 @@ namespace CuponeraFront
 
             tabControlMain.TabPages.Remove(btmAgregarCupon);
             tabControlMain.TabPages.Remove(tabUsuarios);
-
+            tabControlMain.TabPages.Remove(tabCuponesCliente);
             CbRegistroAdmin.Visible = false;
 
             this.Load += Form1_Load; 
@@ -105,7 +105,8 @@ namespace CuponeraFront
                         }
                         else if (Sesion.Rol == "Cliente")
                         {
-                            ////////////////
+                            if (!tabControlMain.TabPages.Contains(tabCuponesCliente))
+                                tabControlMain.TabPages.Add(tabCuponesCliente);
                         }
                     }
                     else
@@ -535,7 +536,45 @@ namespace CuponeraFront
         {
 
         }
+
+        private async void btmCuponesCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/Cupon");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var cupones = JsonSerializer.Deserialize<List<CuponDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    dgvCuponesCliente.AutoGenerateColumns = true;
+                    dgvCuponesCliente.DataSource = new BindingList<CuponDTO>(cupones);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron cargar los cupones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
     }
+    
 
 

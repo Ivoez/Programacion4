@@ -87,6 +87,14 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabCuponesCliente = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvCuponesCliente = new System.Windows.Forms.DataGridView();
+            this.btmCuponesCliente = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btmReclamarCupon = new System.Windows.Forms.Button();
             this.btmAgregarCupon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCargados)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -98,6 +106,11 @@
             this.tabRegistro.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabCuponesCliente.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCliente)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btmAgregarCupon
@@ -675,11 +688,96 @@
             this.tabControlMain.Controls.Add(this.tabRegistro);
             this.tabControlMain.Controls.Add(this.tabUsuarios);
             this.tabControlMain.Controls.Add(this.btmAgregarCupon);
+            this.tabControlMain.Controls.Add(this.tabCuponesCliente);
             this.tabControlMain.Location = new System.Drawing.Point(-2, -2);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(1530, 634);
             this.tabControlMain.TabIndex = 5;
+            // 
+            // tabCuponesCliente
+            // 
+            this.tabCuponesCliente.Controls.Add(this.groupBox3);
+            this.tabCuponesCliente.Controls.Add(this.groupBox2);
+            this.tabCuponesCliente.Location = new System.Drawing.Point(4, 25);
+            this.tabCuponesCliente.Name = "tabCuponesCliente";
+            this.tabCuponesCliente.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCuponesCliente.Size = new System.Drawing.Size(1522, 605);
+            this.tabCuponesCliente.TabIndex = 4;
+            this.tabCuponesCliente.Text = "Cupones";
+            this.tabCuponesCliente.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btmReclamarCupon);
+            this.groupBox2.Controls.Add(this.btmCuponesCliente);
+            this.groupBox2.Controls.Add(this.dgvCuponesCliente);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(623, 297);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cupones disponible";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // dgvCuponesCliente
+            // 
+            this.dgvCuponesCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCuponesCliente.Location = new System.Drawing.Point(18, 21);
+            this.dgvCuponesCliente.Name = "dgvCuponesCliente";
+            this.dgvCuponesCliente.RowHeadersWidth = 51;
+            this.dgvCuponesCliente.RowTemplate.Height = 24;
+            this.dgvCuponesCliente.Size = new System.Drawing.Size(567, 226);
+            this.dgvCuponesCliente.TabIndex = 0;
+            // 
+            // btmCuponesCliente
+            // 
+            this.btmCuponesCliente.Location = new System.Drawing.Point(18, 268);
+            this.btmCuponesCliente.Name = "btmCuponesCliente";
+            this.btmCuponesCliente.Size = new System.Drawing.Size(75, 23);
+            this.btmCuponesCliente.TabIndex = 1;
+            this.btmCuponesCliente.Text = "Ver";
+            this.btmCuponesCliente.UseVisualStyleBackColor = true;
+            this.btmCuponesCliente.Click += new System.EventHandler(this.btmCuponesCliente_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Location = new System.Drawing.Point(671, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(623, 297);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cupones reclamados";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(18, 268);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Ver";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(567, 226);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // btmReclamarCupon
+            // 
+            this.btmReclamarCupon.Location = new System.Drawing.Point(132, 268);
+            this.btmReclamarCupon.Name = "btmReclamarCupon";
+            this.btmReclamarCupon.Size = new System.Drawing.Size(75, 23);
+            this.btmReclamarCupon.TabIndex = 2;
+            this.btmReclamarCupon.Text = "Reclamar";
+            this.btmReclamarCupon.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -704,6 +802,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabCuponesCliente.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCliente)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -769,6 +872,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescripcionArticulo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabCuponesCliente;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btmCuponesCliente;
+        private System.Windows.Forms.DataGridView dgvCuponesCliente;
+        private System.Windows.Forms.Button btmReclamarCupon;
     }
 }
 
