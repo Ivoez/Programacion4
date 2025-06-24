@@ -5,6 +5,7 @@ namespace TrabajoPracticoCuponera.Dtos
 {
     public class CuponDTO
     {
+        public string NroCupon { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal? PorcentajeDto { get; set; }

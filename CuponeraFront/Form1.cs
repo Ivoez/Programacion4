@@ -30,7 +30,7 @@ namespace CuponeraFront
             tabControlMain.TabPages.Remove(tabCuponesCliente);
             CbRegistroAdmin.Visible = false;
 
-            this.Load += Form1_Load; 
+            this.Load += Form1_Load;
 
 
 
@@ -49,8 +49,8 @@ namespace CuponeraFront
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        { 
-        //desabilitado xd
+        {
+            //desabilitado xd
         }
 
         private async void button1_Click_1(object sender, EventArgs e) //boton login
@@ -87,7 +87,7 @@ namespace CuponeraFront
 
 
                         MessageBox.Show($"Login exitoso como {Sesion.Rol}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+
                         if (Sesion.Rol == "Admin")
                         {
                             if (!tabControlMain.TabPages.Contains(tabUsuarios))
@@ -98,7 +98,7 @@ namespace CuponeraFront
 
                             tabControlMain.SelectedTab = btmAgregarCupon;
 
-                            CbRegistroAdmin.Visible = true; 
+                            CbRegistroAdmin.Visible = true;
                             tabControlMain.SelectedTab = tabRegistro;
 
 
@@ -191,7 +191,7 @@ namespace CuponeraFront
 
         private async void dgvUsuarios_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; 
+            if (e.RowIndex < 0) return;
 
             var row = dgvUsuarios.Rows[e.RowIndex];
             if (row.DataBoundItem is UsuarioDTO usuarioModificado)
@@ -214,7 +214,7 @@ namespace CuponeraFront
                         string error = await response.Content.ReadAsStringAsync();
                         MessageBox.Show($"Error al actualizar usuario:\n{error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        
+
                         await CargarUsuariosAsync();
                     }
                 }
@@ -239,14 +239,14 @@ namespace CuponeraFront
                 var json = await response.Content.ReadAsStringAsync();
                 var usuarios = JsonSerializer.Deserialize<List<UsuarioDTO>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                dgvUsuarios.DataSource = new BindingList<UsuarioDTO>(usuarios); 
+                dgvUsuarios.DataSource = new BindingList<UsuarioDTO>(usuarios);
             }
             else
             {
                 MessageBox.Show("No se pudieron cargar los usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
-            }
+
+        }
 
 
 
@@ -271,7 +271,7 @@ namespace CuponeraFront
                         PropertyNameCaseInsensitive = true
                     });
 
-                    dgvCuponesCargados.AutoGenerateColumns = true; 
+                    dgvCuponesCargados.AutoGenerateColumns = true;
                     dgvCuponesCargados.DataSource = new BindingList<CuponDTO>(cupones);
                 }
                 else
@@ -347,16 +347,16 @@ namespace CuponeraFront
                     Activo = CbActivo.Checked,
                     PorcentajeDto = null,
                     ImportePromo = null,
-                    Detalles = new List<CuponDetalleDTO>() 
+                    Detalles = new List<CuponDetalleDTO>()
                 };
 
-                
+
                 if (dto.Id_Tipo_Cupon == 1 && decimal.TryParse(NudPorcentaje.Text, out decimal porc))
                     dto.PorcentajeDto = porc;
                 else if (dto.Id_Tipo_Cupon == 2 && decimal.TryParse(NudImporte.Text, out decimal imp))
                     dto.ImportePromo = imp;
-                
-                
+
+
 
                 // Llamada a la API
                 var httpClient = new HttpClient();
@@ -371,7 +371,7 @@ namespace CuponeraFront
                 {
                     MessageBox.Show("Cupón creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                  
+
                     txtNombreCupon.Text = "";
                     txtDescrip.Text = "";
                     NudPorcentaje.Text = "";
@@ -484,6 +484,127 @@ namespace CuponeraFront
 
 
 
+        private async void btmCuponesCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/Cupon");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var cupones = JsonSerializer.Deserialize<List<CuponDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    dgvCuponesCliente.AutoGenerateColumns = true;
+                    dgvCuponesCliente.DataSource = new BindingList<CuponDTO>(cupones);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron cargar los cupones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
+        }
+
+
+        ///GRID CUPONES CLIENTE
+
+        private async void CargarCuponesReclamados()
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/CuponHistorial/mio");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var historial = JsonSerializer.Deserialize<List<CuponHistorialDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    dtgCuponesReclamados.AutoGenerateColumns = true;
+                    dtgCuponesReclamados.DataSource = new BindingList<CuponHistorialDTO>(historial);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el historial.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener historial: " + ex.Message);
+            }
+        }
+
+
+        private async void btmReclamarCupon_Click(object sender, EventArgs e)
+        {
+            if (dgvCuponesCliente.CurrentRow == null)
+            {
+                MessageBox.Show("Selecciona un cupón.");
+                return;
+            }
+
+            var cupon = dgvCuponesCliente.CurrentRow.DataBoundItem as CuponDTO;
+
+            if (cupon == null)
+            {
+                MessageBox.Show("Error al obtener el cupón.");
+                return;
+            }
+
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.PostAsync($"https://localhost:44329/api/CuponHistorial/reclamar/{cupon.NroCupon}", null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("¡Cupón reclamado!");
+                    CargarCuponesReclamados();
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show($"No se pudo reclamar el cupón.\n{error}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al reclamar: {ex.Message}");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -537,44 +658,19 @@ namespace CuponeraFront
 
         }
 
-        private async void btmCuponesCliente_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.Authorization =
-                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
 
-                var response = await httpClient.GetAsync("https://localhost:44329/api/Cupon");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var json = await response.Content.ReadAsStringAsync();
-                    var cupones = JsonSerializer.Deserialize<List<CuponDTO>>(json, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-
-                    dgvCuponesCliente.AutoGenerateColumns = true;
-                    dgvCuponesCliente.DataSource = new BindingList<CuponDTO>(cupones);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudieron cargar los cupones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error inesperado: " + ex.Message);
-            }
-        }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
     
 
 

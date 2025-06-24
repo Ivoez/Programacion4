@@ -80,6 +80,7 @@
     <Compile Include="Dtos\ArticuloDTO.cs" />
     <Compile Include="Dtos\CuponDetalleDTO.cs" />
     <Compile Include="Dtos\CuponDTO.cs" />
+    <Compile Include="Dtos\CuponHistorialDTO.cs" />
     <Compile Include="Dtos\TipoCuponDto.cs" />
     <Compile Include="Dtos\UsuarioDTO.cs" />
     <Compile Include="Form1.cs">

@@ -93,7 +93,7 @@
             this.btmCuponesCliente = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgCuponesReclamados = new System.Windows.Forms.DataGridView();
             this.btmReclamarCupon = new System.Windows.Forms.Button();
             this.btmAgregarCupon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCargados)).BeginInit();
@@ -110,7 +110,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCliente)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCuponesReclamados)).BeginInit();
             this.SuspendLayout();
             // 
             // btmAgregarCupon
@@ -743,7 +743,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.dtgCuponesReclamados);
             this.groupBox3.Location = new System.Drawing.Point(671, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(623, 297);
@@ -759,16 +759,17 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "Ver";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView2
+            // dtgCuponesReclamados
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(567, 226);
-            this.dataGridView2.TabIndex = 0;
+            this.dtgCuponesReclamados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCuponesReclamados.Location = new System.Drawing.Point(18, 21);
+            this.dtgCuponesReclamados.Name = "dtgCuponesReclamados";
+            this.dtgCuponesReclamados.RowHeadersWidth = 51;
+            this.dtgCuponesReclamados.RowTemplate.Height = 24;
+            this.dtgCuponesReclamados.Size = new System.Drawing.Size(567, 226);
+            this.dtgCuponesReclamados.TabIndex = 0;
             // 
             // btmReclamarCupon
             // 
@@ -778,6 +779,7 @@
             this.btmReclamarCupon.TabIndex = 2;
             this.btmReclamarCupon.Text = "Reclamar";
             this.btmReclamarCupon.UseVisualStyleBackColor = true;
+            this.btmReclamarCupon.Click += new System.EventHandler(this.btmReclamarCupon_Click);
             // 
             // Form1
             // 
@@ -806,7 +808,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCliente)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCuponesReclamados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -875,7 +877,7 @@
         private System.Windows.Forms.TabPage tabCuponesCliente;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgCuponesReclamados;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btmCuponesCliente;
         private System.Windows.Forms.DataGridView dgvCuponesCliente;

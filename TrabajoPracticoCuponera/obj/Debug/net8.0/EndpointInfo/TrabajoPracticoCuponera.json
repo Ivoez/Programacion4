@@ -571,6 +571,10 @@
       "CuponDTO": {
         "type": "object",
         "properties": {
+          "nroCupon": {
+            "type": "string",
+            "nullable": true
+          },
           "nombre": {
             "type": "string",
             "nullable": true

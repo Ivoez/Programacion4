@@ -21,6 +21,7 @@ namespace TrabajoPracticoCuponera.Servicies
             return await _context.Cupones
                 .Select(c => new CuponDTO
                 {
+                    NroCupon = c.NroCupon,
                     Nombre = c.Nombre,
                     Descripcion = c.Descripcion,
                     PorcentajeDto = c.PorcentajeDto,
@@ -40,6 +41,7 @@ namespace TrabajoPracticoCuponera.Servicies
                 .Where(c => c.Activo && c.FechaInicio <= hoy && c.FechaFin >= hoy)
                 .Select(c => new CuponDTO
                 {
+                    NroCupon = c.NroCupon,
                     Nombre = c.Nombre,
                     Descripcion = c.Descripcion,
                     PorcentajeDto = c.PorcentajeDto,
@@ -63,6 +65,7 @@ namespace TrabajoPracticoCuponera.Servicies
 
             return new CuponDTO
             {
+                NroCupon = cupon.NroCupon,
                 Nombre = cupon.Nombre,
                 Descripcion = cupon.Descripcion,
                 PorcentajeDto = cupon.PorcentajeDto,
