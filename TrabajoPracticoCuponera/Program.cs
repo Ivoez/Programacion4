@@ -52,6 +52,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<ICuponService, CuponService>();
 builder.Services.AddScoped<IArticuloService, ArticuloService>();
+builder.Services.AddScoped<ICuponHistorialService, CuponHistorialService>();
 
 var app = builder.Build();
 

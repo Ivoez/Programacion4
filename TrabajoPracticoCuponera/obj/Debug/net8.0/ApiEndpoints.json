@@ -230,6 +230,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponHistorialController",
+    "Method": "ObtenerHistorialCliente",
+    "RelativePath": "api/CuponHistorial/mio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrabajoPracticoCuponera.Controllers.CuponHistorialController",
+    "Method": "ReclamarCupon",
+    "RelativePath": "api/CuponHistorial/reclamar/{nroCupon}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nroCupon",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TrabajoPracticoCuponera.Controllers.UsuarioController",
     "Method": "GetUsuarios",
     "RelativePath": "api/Usuario",

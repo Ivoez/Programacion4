@@ -3,12 +3,52 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\Programacion4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|c:\\xampp\\htdocs\\programacion4\\cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|solutionrelative:cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\controllers\\cuponhistorialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\controllers\\cuponhistorialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\cuponhistorialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\servicies\\cuponhistorialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\cuponservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\servicies\\cuponservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\interfaces\\icuponhistorialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\interfaces\\icuponhistorialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\servicies\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\dtos\\cuponhistorialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\dtos\\cuponhistorialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\models\\cuponhistorialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\models\\cuponhistorialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|c:\\xampp\\htdocs\\programacion4\\cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|solutionrelative:cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|c:\\xampp\\htdocs\\programacion4\\cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|solutionrelative:cuponerafront\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|C:\\xampp\\htdocs\\Programacion4\\cuponerafront\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,32 +71,16 @@
       "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\dtos\\articulodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\controllers\\articulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\controllers\\articulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\servicies\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\interfaces\\iarticuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\interfaces\\iarticuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\models\\articulomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\models\\articulomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\cuponservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\servicies\\cuponservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\servicies\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -155,10 +179,6 @@
       "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|c:\\xampp\\htdocs\\programacion4\\trabajopracticocuponera\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4136383-9B1D-467B-BB15-50A5600F3F56}|TrabajoPracticoCuponera\\TrabajoPracticoCuponera.csproj|solutionrelative:trabajopracticocuponera\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|C:\\xampp\\htdocs\\Programacion4\\cuponerafront\\utils\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08898DF6-7AFF-4484-A4B9-576A1A24497C}|CuponeraFront\\CuponeraFront.csproj|solutionrelative:cuponerafront\\utils\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -178,7 +198,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 34,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -198,7 +218,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "CuponHistorialController.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\CuponHistorialController.cs",
+              "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Controllers\\CuponHistorialController.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\CuponHistorialController.cs*",
+              "RelativeToolTip": "TrabajoPracticoCuponera\\Controllers\\CuponHistorialController.cs*",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwvzUAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:15:30.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICuponHistorialService.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\ICuponHistorialService.cs",
+              "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Interfaces\\ICuponHistorialService.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\ICuponHistorialService.cs",
+              "RelativeToolTip": "TrabajoPracticoCuponera\\Interfaces\\ICuponHistorialService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:12:58.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CuponHistorialService.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\CuponHistorialService.cs",
+              "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Servicies\\CuponHistorialService.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\CuponHistorialService.cs",
+              "RelativeToolTip": "TrabajoPracticoCuponera\\Servicies\\CuponHistorialService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:09:11.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CuponHistorialDTO.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\CuponHistorialDTO.cs",
+              "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\CuponHistorialDTO.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\CuponHistorialDTO.cs",
+              "RelativeToolTip": "TrabajoPracticoCuponera\\Dtos\\CuponHistorialDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:07:37.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CuponHistorialModel.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\CuponHistorialModel.cs",
+              "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\CuponHistorialModel.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\CuponHistorialModel.cs",
+              "RelativeToolTip": "TrabajoPracticoCuponera\\Models\\CuponHistorialModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T15:07:07.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ArticuloDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\ArticuloDTO.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\ArticuloDTO.cs",
@@ -210,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "CuponDetalleDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\CuponDetalleDTO.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\CuponDetalleDTO.cs",
@@ -222,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "ArticuloController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\ArticuloController.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Controllers\\ArticuloController.cs",
@@ -234,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "IArticuloService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\IArticuloService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Interfaces\\IArticuloService.cs",
@@ -246,19 +331,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "ArticuloService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\ArticuloService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Servicies\\ArticuloService.cs",
               "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\ArticuloService.cs",
               "RelativeToolTip": "TrabajoPracticoCuponera\\Servicies\\ArticuloService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwFcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T23:42:25.354Z"
+              "WhenOpened": "2025-06-23T23:42:25.354Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "ArticuloDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\ArticuloDTO.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\ArticuloDTO.cs",
@@ -270,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "TipoCuponDto.cs [Design]",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\TipoCuponDto.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\TipoCuponDto.cs",
@@ -281,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "TipoCuponDto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\TipoCuponDto.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\TipoCuponDto.cs",
@@ -293,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "TipoCuponDto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\TipoCuponDto.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\TipoCuponDto.cs",
@@ -305,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "CuponDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\CuponDTO.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\CuponDTO.cs",
@@ -317,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "libman.json",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\libman.json",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\libman.json",
@@ -329,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "ArticuloModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\ArticuloModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\ArticuloModel.cs",
@@ -341,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "CuponDetalleModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\CuponDetalleModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\CuponDetalleModel.cs",
@@ -353,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "CuponDetalleDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\CuponDetalleDTO.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\CuponDetalleDTO.cs",
@@ -365,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "CuponController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\CuponController.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Controllers\\CuponController.cs",
@@ -377,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "CuponService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\CuponService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Servicies\\CuponService.cs",
@@ -385,11 +471,12 @@
               "RelativeToolTip": "TrabajoPracticoCuponera\\Servicies\\CuponService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T17:33:58.27Z"
+              "WhenOpened": "2025-06-22T17:33:58.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "ICuponService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\ICuponService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Interfaces\\ICuponService.cs",
@@ -401,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "CuponDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\CuponDTO.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\CuponDTO.cs",
@@ -413,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "TipoCuponModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\TipoCuponModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\TipoCuponModel.cs",
@@ -425,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "CuponModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\CuponModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\CuponModel.cs",
@@ -437,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Dtos\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Dtos\\UsuarioDTO.cs",
@@ -449,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Controllers\\UsuarioController.cs",
@@ -461,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\UsuarioService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Servicies\\UsuarioService.cs",
@@ -473,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 2,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Interfaces\\IUsuarioService.cs",
@@ -481,11 +568,12 @@
               "RelativeToolTip": "TrabajoPracticoCuponera\\Interfaces\\IUsuarioService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T13:45:13.225Z"
+              "WhenOpened": "2025-06-22T13:45:13.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\UsuarioDTO.cs",
@@ -497,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Interfaces\\IAuthService.cs",
@@ -509,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "Form1.resx",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Form1.resx",
               "RelativeDocumentMoniker": "CuponeraFront\\Form1.resx",
@@ -521,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "Sesion.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Utils\\Sesion.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Utils\\Sesion.cs",
@@ -533,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Program.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Program.cs",
@@ -545,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Form1.Designer.cs",
@@ -558,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Form1.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Form1.cs",
@@ -571,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\CuponeraFront\\Form1.cs",
               "RelativeDocumentMoniker": "CuponeraFront\\Form1.cs",
@@ -583,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Servicies\\AuthService.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Servicies\\AuthService.cs",
@@ -596,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "RegistroUsuarioDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Dtos\\RegistroUsuarioDTO.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Dtos\\RegistroUsuarioDTO.cs",
@@ -608,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Properties\\launchSettings.json",
@@ -620,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 38,
               "Title": "RolModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\RolModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\RolModel.cs",
@@ -632,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\UserModel.cs",
@@ -644,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Models\\LoginModel.cs",
@@ -656,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Controllers\\AuthController.cs",
@@ -668,19 +756,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Program.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Program.cs",
               "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Program.cs",
               "RelativeToolTip": "TrabajoPracticoCuponera\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T17:07:19.774Z"
+              "WhenOpened": "2025-06-19T17:07:19.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\appsettings.json",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\appsettings.json",
@@ -692,15 +781,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "TrabajoPracticoCuponera\\Context\\AppDbContext.cs",
               "ToolTip": "C:\\xampp\\htdocs\\Programacion4\\TrabajoPracticoCuponera\\Context\\AppDbContext.cs",
               "RelativeToolTip": "TrabajoPracticoCuponera\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBcAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T17:03:22.256Z"
+              "WhenOpened": "2025-06-19T17:03:22.256Z",
+              "EditorCaption": ""
             }
           ]
         }

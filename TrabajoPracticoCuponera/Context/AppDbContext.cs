@@ -21,6 +21,7 @@ namespace TrabajoPracticoCuponera.Context
 
         public DbSet<ArticuloModel> Articulos { get; set; }
 
+        public DbSet<CuponHistorialModel> CuponesHistorial { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

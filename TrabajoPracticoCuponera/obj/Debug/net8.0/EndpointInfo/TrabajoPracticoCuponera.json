@@ -381,6 +381,40 @@
         }
       }
     },
+    "/api/CuponHistorial/mio": {
+      "get": {
+        "tags": [
+          "CuponHistorial"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CuponHistorial/reclamar/{nroCupon}": {
+      "post": {
+        "tags": [
+          "CuponHistorial"
+        ],
+        "parameters": [
+          {
+            "name": "nroCupon",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario": {
       "get": {
         "tags": [
