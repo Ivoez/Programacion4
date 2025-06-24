@@ -20,9 +20,11 @@ namespace CuponeraFront
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+
             tabControlMain.TabPages.Remove(btmAgregarCupon);
             tabControlMain.TabPages.Remove(tabUsuarios);
 
@@ -391,6 +393,90 @@ namespace CuponeraFront
 
 
 
+        ///carga grid articulos 
+        private async Task CargarArticulosAsync()
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+                var response = await httpClient.GetAsync("https://localhost:44329/api/Articulo");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var articulos = JsonSerializer.Deserialize<List<ArticuloDTO>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    dgvArticuloAgregar.DataSource = new BindingList<ArticuloDTO>(articulos);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron cargar los artículos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
+        }
+
+        private async void btnVerArticulos_Click(object sender, EventArgs e)
+        {
+            await CargarArticulosAsync();
+        }
+
+        private async void BtmAgregarProducto_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtArticulo.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("El nombre y el precio son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+            {
+                MessageBox.Show("Precio inválido. Ingrese un valor numérico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var nuevoArticulo = new ArticuloDTO
+            {
+                Nombre_Articulo = txtArticulo.Text,
+                Descripcion_Articulo = txtDescripcionArticulo.Text,
+                Precio = precio,
+                Activo = CbActivo.Checked
+            };
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Sesion.Token);
+
+            var json = JsonSerializer.Serialize(nuevoArticulo);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("https://localhost:44329/api/Articulo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Artículo agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await CargarArticulosAsync();
+                txtArticulo.Clear();
+                txtDescripcionArticulo.Clear();
+                txtPrecio.Clear();
+                CbActivoArticulo.Checked = false;
+
+            }
+            else
+            {
+                string error = await response.Content.ReadAsStringAsync();
+                MessageBox.Show("Error al agregar artículo: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 
@@ -403,49 +489,53 @@ namespace CuponeraFront
 
 
 
-
-
-
-
-
-
+        //botones que agregue sin querer al apretar en el form y no los puedo borrar sin romper la vista 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
+            //deshabilitado xd
+        } //deshabilitado
 
         private void dgvUsuarios_CellContentClick(object sender, EventArgs eventArgs)
         {
             //deshabilitado xd
-        }
+        } //deshabilitado
 
         private void tabCupones_Click(object sender, EventArgs e)
         {
             //deshabilitado xd
-        }
+        } //deshabilitado
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             //deshabilitado xd
-        }
+        } //deshabilitado
 
         private void label1_Click_1(object sender, EventArgs e)
         {
             //deshabilitado xd
-        }
+        } //deshabilitado
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
+            //deshabilitado
+        } //deshabilitado
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //deshabilitado
+        } //deshabilitado
 
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            //deshabilitado
         }
 
-       
+        private void CbActivoArticulo_CheckedChanged(object sender, EventArgs e) //deshabilitado
+        {
+
+        }
+    }
     }
 
-}
+

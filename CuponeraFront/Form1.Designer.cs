@@ -29,17 +29,22 @@
         private void InitializeComponent()
         {
             this.btmAgregarCupon = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.btmDetalleCupon = new System.Windows.Forms.Button();
             this.dgvCuponesCargados = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbActivoArticulo = new System.Windows.Forms.CheckBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescripcionArticulo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtArticulo = new System.Windows.Forms.TextBox();
+            this.btnVerArticulos = new System.Windows.Forms.Button();
             this.btmCancelarArticulo = new System.Windows.Forms.Button();
             this.btmGuardarArticulo = new System.Windows.Forms.Button();
             this.dgvArticuloAgregar = new System.Windows.Forms.DataGridView();
             this.BtmAgregarProducto = new System.Windows.Forms.Button();
-            this.NudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.cmbArticulo = new System.Windows.Forms.ComboBox();
             this.lblArticulo = new System.Windows.Forms.Label();
             this.NudImporte = new System.Windows.Forms.NumericUpDown();
             this.lblImporte = new System.Windows.Forms.Label();
@@ -61,6 +66,7 @@
             this.btnMostrarGrid = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
+            this.CbRegistroAdmin = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtReEmail = new System.Windows.Forms.TextBox();
             this.txtReDni = new System.Windows.Forms.TextBox();
@@ -81,13 +87,10 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.button2 = new System.Windows.Forms.Button();
-            this.CbRegistroAdmin = new System.Windows.Forms.CheckBox();
             this.btmAgregarCupon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuponesCargados)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticuloAgregar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudImporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudPorcentaje)).BeginInit();
             this.tabUsuarios.SuspendLayout();
@@ -129,6 +132,16 @@
             this.btmAgregarCupon.UseVisualStyleBackColor = true;
             this.btmAgregarCupon.Click += new System.EventHandler(this.tabCupones_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(156, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Agregar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // btmDetalleCupon
             // 
             this.btmDetalleCupon.Location = new System.Drawing.Point(667, 215);
@@ -141,6 +154,7 @@
             // 
             // dgvCuponesCargados
             // 
+            this.dgvCuponesCargados.AllowUserToAddRows = false;
             this.dgvCuponesCargados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuponesCargados.Location = new System.Drawing.Point(649, 35);
             this.dgvCuponesCargados.Name = "dgvCuponesCargados";
@@ -161,20 +175,84 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CbActivoArticulo);
+            this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtDescripcionArticulo);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtArticulo);
+            this.groupBox1.Controls.Add(this.btnVerArticulos);
             this.groupBox1.Controls.Add(this.btmCancelarArticulo);
             this.groupBox1.Controls.Add(this.btmGuardarArticulo);
             this.groupBox1.Controls.Add(this.dgvArticuloAgregar);
             this.groupBox1.Controls.Add(this.BtmAgregarProducto);
-            this.groupBox1.Controls.Add(this.NudCantidad);
-            this.groupBox1.Controls.Add(this.lblCantidad);
-            this.groupBox1.Controls.Add(this.cmbArticulo);
             this.groupBox1.Controls.Add(this.lblArticulo);
             this.groupBox1.Location = new System.Drawing.Point(22, 290);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(828, 292);
+            this.groupBox1.Size = new System.Drawing.Size(1290, 292);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar articulo al cupon";
+            // 
+            // CbActivoArticulo
+            // 
+            this.CbActivoArticulo.AutoSize = true;
+            this.CbActivoArticulo.Location = new System.Drawing.Point(832, 41);
+            this.CbActivoArticulo.Name = "CbActivoArticulo";
+            this.CbActivoArticulo.Size = new System.Drawing.Size(66, 20);
+            this.CbActivoArticulo.TabIndex = 29;
+            this.CbActivoArticulo.Text = "Activo";
+            this.CbActivoArticulo.UseVisualStyleBackColor = true;
+            this.CbActivoArticulo.CheckedChanged += new System.EventHandler(this.CbActivoArticulo_CheckedChanged);
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(627, 40);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(137, 22);
+            this.txtPrecio.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(567, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Precio";
+            // 
+            // txtDescripcionArticulo
+            // 
+            this.txtDescripcionArticulo.Location = new System.Drawing.Point(334, 37);
+            this.txtDescripcionArticulo.Name = "txtDescripcionArticulo";
+            this.txtDescripcionArticulo.Size = new System.Drawing.Size(210, 22);
+            this.txtDescripcionArticulo.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(235, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Descripcion";
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Location = new System.Drawing.Point(69, 37);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(137, 22);
+            this.txtArticulo.TabIndex = 24;
+            // 
+            // btnVerArticulos
+            // 
+            this.btnVerArticulos.Location = new System.Drawing.Point(1137, 32);
+            this.btnVerArticulos.Name = "btnVerArticulos";
+            this.btnVerArticulos.Size = new System.Drawing.Size(133, 30);
+            this.btnVerArticulos.TabIndex = 23;
+            this.btnVerArticulos.Text = "Ver Articulos";
+            this.btnVerArticulos.UseVisualStyleBackColor = true;
+            this.btnVerArticulos.Click += new System.EventHandler(this.btnVerArticulos_Click);
             // 
             // btmCancelarArticulo
             // 
@@ -196,56 +274,34 @@
             // 
             // dgvArticuloAgregar
             // 
+            this.dgvArticuloAgregar.AllowUserToAddRows = false;
             this.dgvArticuloAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticuloAgregar.Location = new System.Drawing.Point(6, 65);
             this.dgvArticuloAgregar.Name = "dgvArticuloAgregar";
             this.dgvArticuloAgregar.RowHeadersWidth = 51;
             this.dgvArticuloAgregar.RowTemplate.Height = 24;
-            this.dgvArticuloAgregar.Size = new System.Drawing.Size(789, 192);
+            this.dgvArticuloAgregar.Size = new System.Drawing.Size(1278, 192);
             this.dgvArticuloAgregar.TabIndex = 20;
             this.dgvArticuloAgregar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // BtmAgregarProducto
             // 
-            this.BtmAgregarProducto.Location = new System.Drawing.Point(433, 33);
+            this.BtmAgregarProducto.Location = new System.Drawing.Point(984, 33);
             this.BtmAgregarProducto.Name = "BtmAgregarProducto";
-            this.BtmAgregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.BtmAgregarProducto.Size = new System.Drawing.Size(136, 29);
             this.BtmAgregarProducto.TabIndex = 19;
             this.BtmAgregarProducto.Text = "Agregar";
             this.BtmAgregarProducto.UseVisualStyleBackColor = true;
-            // 
-            // NudCantidad
-            // 
-            this.NudCantidad.Location = new System.Drawing.Point(279, 33);
-            this.NudCantidad.Name = "NudCantidad";
-            this.NudCantidad.Size = new System.Drawing.Size(120, 22);
-            this.NudCantidad.TabIndex = 18;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(212, 39);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(61, 16);
-            this.lblCantidad.TabIndex = 11;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // cmbArticulo
-            // 
-            this.cmbArticulo.FormattingEnabled = true;
-            this.cmbArticulo.Location = new System.Drawing.Point(63, 31);
-            this.cmbArticulo.Name = "cmbArticulo";
-            this.cmbArticulo.Size = new System.Drawing.Size(121, 24);
-            this.cmbArticulo.TabIndex = 10;
+            this.BtmAgregarProducto.Click += new System.EventHandler(this.BtmAgregarProducto_Click);
             // 
             // lblArticulo
             // 
             this.lblArticulo.AutoSize = true;
             this.lblArticulo.Location = new System.Drawing.Point(6, 39);
             this.lblArticulo.Name = "lblArticulo";
-            this.lblArticulo.Size = new System.Drawing.Size(51, 16);
+            this.lblArticulo.Size = new System.Drawing.Size(56, 16);
             this.lblArticulo.TabIndex = 9;
-            this.lblArticulo.Text = "Articulo";
+            this.lblArticulo.Text = "Nombre";
             // 
             // NudImporte
             // 
@@ -438,6 +494,16 @@
             this.tabRegistro.Text = "Registro";
             this.tabRegistro.UseVisualStyleBackColor = true;
             // 
+            // CbRegistroAdmin
+            // 
+            this.CbRegistroAdmin.AutoSize = true;
+            this.CbRegistroAdmin.Location = new System.Drawing.Point(304, 180);
+            this.CbRegistroAdmin.Name = "CbRegistroAdmin";
+            this.CbRegistroAdmin.Size = new System.Drawing.Size(112, 20);
+            this.CbRegistroAdmin.TabIndex = 13;
+            this.CbRegistroAdmin.Text = "Administrador";
+            this.CbRegistroAdmin.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(11, 178);
@@ -615,26 +681,6 @@
             this.tabControlMain.Size = new System.Drawing.Size(1530, 634);
             this.tabControlMain.TabIndex = 5;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(156, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // CbRegistroAdmin
-            // 
-            this.CbRegistroAdmin.AutoSize = true;
-            this.CbRegistroAdmin.Location = new System.Drawing.Point(304, 180);
-            this.CbRegistroAdmin.Name = "CbRegistroAdmin";
-            this.CbRegistroAdmin.Size = new System.Drawing.Size(112, 20);
-            this.CbRegistroAdmin.TabIndex = 13;
-            this.CbRegistroAdmin.Text = "Administrador";
-            this.CbRegistroAdmin.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -649,7 +695,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticuloAgregar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudImporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudPorcentaje)).EndInit();
             this.tabUsuarios.ResumeLayout(false);
@@ -673,10 +718,6 @@
         private System.Windows.Forms.Button btmCancelarArticulo;
         private System.Windows.Forms.Button btmGuardarArticulo;
         private System.Windows.Forms.DataGridView dgvArticuloAgregar;
-        private System.Windows.Forms.Button BtmAgregarProducto;
-        private System.Windows.Forms.NumericUpDown NudCantidad;
-        private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.ComboBox cmbArticulo;
         private System.Windows.Forms.Label lblArticulo;
         private System.Windows.Forms.NumericUpDown NudImporte;
         private System.Windows.Forms.Label lblImporte;
@@ -720,6 +761,14 @@
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox CbRegistroAdmin;
+        private System.Windows.Forms.Button btnVerArticulos;
+        private System.Windows.Forms.TextBox txtArticulo;
+        private System.Windows.Forms.Button BtmAgregarProducto;
+        private System.Windows.Forms.CheckBox CbActivoArticulo;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDescripcionArticulo;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Text;
 using TrabajoPracticoCuponera.Context;
 using TrabajoPracticoCuponera.Interfaces;
 using TrabajoPracticoCuponera.Models;
+using TrabajoPracticoCuponera.Services;
 using TrabajoPracticoCuponera.Servicies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -50,6 +51,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<ICuponService, CuponService>();
+builder.Services.AddScoped<IArticuloService, ArticuloService>();
 
 var app = builder.Build();
 
